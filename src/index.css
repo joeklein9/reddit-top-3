@@ -1,0 +1,33 @@
+.card-container {
+  display:flex;
+  flex-direction:column;
+  border:2px solid black;
+  width:500px;
+  height:700px;
+  font-family: 'Golos Text', sans-serif;
+  border-radius:5%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding:10px;
+
+
+}
+
+.score-container {
+
+display:flex;
+flex-direction:column;
+justify-content: center;
+align-items:center;
+}
+
+.header-container {
+}
+
+.score-and-header-container {
+  display:flex; 
+  gap:10%;
+}
+
+.comments-container {
+  text-align:center;
+}
