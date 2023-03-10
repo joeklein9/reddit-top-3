@@ -6,6 +6,9 @@ export default function App () {
 
   const [posts, setPosts] = useState([])
 
+
+ 
+
   useEffect(() => {
     fetch("https://www.reddit.com/r/pics/top/.json?t=all&limit=3").then(
       res => {
@@ -23,13 +26,29 @@ export default function App () {
     )
   }, []);
 
-
+  const postElements  = posts.map(post => {
+    return <Card 
+      ups = {post.data.ups}
+      title = {post.data.title}
+      subreddit = {post.data.subreddit}
+      preview = {post.data.preview}
+      permalink = {post.data.permalink}
+      author = {post.data.author}
+      comments = {post.data.num_comments}
+    
+    
+    />
+  })
 
 
   return (
-    <Card 
-      
+  <div>
+
+    {postElements}
+
     
-    />
+  </div>
+    
+    
   )
 }
