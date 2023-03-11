@@ -11,10 +11,15 @@ export default function App () {
     setSubreddit (e.target.value)
   }
 
+  function handleSubmit () {
+    e.preventDefault()
+    const formData = new FormData(e.target)
+  }
+
  
 
   useEffect(() => {
-    fetch("https://www.reddit.com/r/frontend/top/.json?t=all&limit=3").then(
+    fetch("https://www.reddit.com/r/natureismetal/top/.json?t=all&limit=3").then(
       res => {
         if (res.status !== 200) {
           console.warn("Warning: Something is wrong with the api.");
@@ -47,7 +52,10 @@ export default function App () {
 
   return (
   <div>
-   r/ <input type="text" value={subreddit} onChange={handleChange} placeholder = "Enter subreddit name" />
+    <form onSubmit = {handleSubmit}>
+      r/ <input type="text" value={subreddit} onChange={handleChange} placeholder = "Enter subreddit name" />
+      <button type="submit">Submit</button>
+    </form>
   
     {postElements}
 

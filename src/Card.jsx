@@ -14,12 +14,16 @@ export default function Card (props) {
                 </div>
                 <header className = "header-container">
                     <h6 className = "posted-by">Posted by {props.author}</h6>
-                    <h1 className = "post-title">{props.title}</h1>
+                    <h4 className = "post-title">{props.title}</h4>
                     <a href={ base_url + props.permalink } target="_blank"/> Link
                 </header>
             </div>
-            <img src = {(props.preview.images[0].source.url).replace(/&amp;/g, "&")}/>
-            <h6 className = "comments-container">{props.comments} comments</h6>
+
+            <div className = "image-container">
+                <img className = "card-image" src = {(props.preview.images[0].source.url).replace(/&amp;/g, "&")}/>
+            </div>
+            
+            <h3 className = "comments-container">{props.comments} comments</h3>
         </div>
     )
 }
