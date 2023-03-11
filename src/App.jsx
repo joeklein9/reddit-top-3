@@ -14,7 +14,7 @@ export default function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    fetch(`https://www.reddit.com/r/${subreddit}/top/.json?t=all&limit=3`)
+    fetch(`https://www.reddit.com/r/${subreddit}/top/.json?t=all&limit=9`)
       .then(res => {
         if (res.status !== 200) {
           console.warn("Warning: Something is wrong with the api.");
@@ -30,7 +30,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    fetch("https://www.reddit.com/r/wallpapers/top/.json?t=all&limit=3").then(
+    fetch("https://www.reddit.com/r/wallpapers/top/.json?t=all&limit=9").then(
       res => {
         if (res.status !== 200) {
           console.warn("Warning: Something is wrong with the api.");
