@@ -1,67 +1,85 @@
-import {React, useEffect, useState} from 'react'
-import Card from "/src/Card"
+import { React, useEffect, useState } from 'react';
+import Card from "/src/Card";
 
 
-export default function App () {
+export default function App() {
 
-  const [posts, setPosts] = useState([])
-  const [subreddit, setSubreddit] = useState ("")
+  const [posts, setPosts] = useState([]);
+  const [subreddit, setSubreddit] = useState("");
 
   const handleChange = (e) => {
-    setSubreddit (e.target.value)
-  }
+    setSubreddit(e.target.value);
+  };
 
-  function handleSubmit () {
-    e.preventDefault()
-    const formData = new FormData(e.target)
-  }
-
- 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    fetch(`https://www.reddit.com/r/${subreddit}/top/.json?t=all&limit=9`)
+      .then(res => {
+        if (res.status !== 200) {
+          console.warn("Warning: Something is wrong with the api.");
+          return;
+        }
+        res.json().then(data => {
+          if (data != null) {
+            console.log(data);
+            setPosts(data.data.children);
+          }
+        });
+      });
+  };
 
   useEffect(() => {
-    fetch("https://www.reddit.com/r/natureismetal/top/.json?t=all&limit=3").then(
+    fetch("https://www.reddit.com/r/earthporn/top/.json?t=all&limit=9").then(
       res => {
         if (res.status !== 200) {
           console.warn("Warning: Something is wrong with the api.");
           return;
         }
         res.json().then(data => {
-          if (data != null)
-            console.log(data)
-            setPosts(data.data.children)
-            
+          if (data != null) {
+            console.log(data);
+            setPosts(data.data.children);
+          }
         });
       }
-    )
+    );
   }, []);
 
-  const postElements  = posts.map(post => {
-    return <Card 
-      ups = {post.data.ups}
-      title = {post.data.title}
-      subreddit = {post.data.subreddit}
-      preview = {post.data.preview}
-      permalink = {post.data.permalink}
-      author = {post.data.author}
-      comments = {post.data.num_comments}
-    
-    
-    />
-  })
+  const postElements = posts.map(post => {
+    return (
+      <Card
+        ups={post.data.ups}
+        title={post.data.title}
+        subreddit={post.data.subreddit}
+        preview={post.data.preview}
+        permalink={post.data.permalink}
+        author={post.data.author}
+        comments={post.data.num_comments}
+        selftext={post.data.selftext}
+        created={post.data.created}
+      />
+    );
+  });
 
 
   return (
-  <div>
-    <form onSubmit = {handleSubmit}>
-      r/ <input type="text" value={subreddit} onChange={handleChange} placeholder = "Enter subreddit name" />
-      <button type="submit">Submit</button>
-    </form>
-  
-    {postElements}
+    <>
+      <form className = "input-form" onSubmit={handleSubmit}>
+        <input className ="input-area" type="text" value={subreddit} onChange={handleChange} placeholder="Enter subreddit name, e.g. 'wallpapers'" />
+        <button className = "submit" type="submit">Submit</button>
+      </form>
 
-    
-  </div>
-    
-    
+      <h1 className="subreddit-title">{subreddit !== "" ? `r/${subreddit}` : null}</h1>
+
+      <div className="main">
+
+
+        {postElements}
+
+
+      </div>
+
+    </>
   )
 }
