@@ -1,4 +1,8 @@
 
+body {
+  overflow-x: hidden;
+}
+
 .card-container {
   display:flex;
   flex-direction:column;
