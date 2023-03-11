@@ -5,12 +5,16 @@ import Card from "/src/Card"
 export default function App () {
 
   const [posts, setPosts] = useState([])
+  const [subreddit, setSubreddit] = useState ("")
 
+  const handleChange = (e) => {
+    setSubreddit (e.target.value)
+  }
 
  
 
   useEffect(() => {
-    fetch("https://www.reddit.com/r/pics/top/.json?t=all&limit=3").then(
+    fetch("https://www.reddit.com/r/frontend/top/.json?t=all&limit=3").then(
       res => {
         if (res.status !== 200) {
           console.warn("Warning: Something is wrong with the api.");
@@ -43,7 +47,8 @@ export default function App () {
 
   return (
   <div>
-
+   r/ <input type="text" value={subreddit} onChange={handleChange} placeholder = "Enter subreddit name" />
+  
     {postElements}
 
     
