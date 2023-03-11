@@ -30,7 +30,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    fetch("https://www.reddit.com/r/earthporn/top/.json?t=all&limit=9").then(
+    fetch("https://www.reddit.com/r/wallpapers/top/.json?t=all&limit=9").then(
       res => {
         if (res.status !== 200) {
           console.warn("Warning: Something is wrong with the api.");
@@ -50,7 +50,7 @@ export default function App() {
     return (
       <Card
         ups={post.data.ups}
-        title={post.data.title}
+        title={<a href={`https://www.reddit.com${post.data.permalink}`}target="_blank">{post.data.title}</a>}
         subreddit={post.data.subreddit}
         preview={post.data.preview}
         permalink={post.data.permalink}
@@ -58,6 +58,7 @@ export default function App() {
         comments={post.data.num_comments}
         selftext={post.data.selftext}
         created={post.data.created}
+        key = {post.data.id}
       />
     );
   });
@@ -70,7 +71,7 @@ export default function App() {
         <button className = "submit" type="submit">Submit</button>
       </form>
 
-      <h1 className="subreddit-title">{subreddit !== "" ? `r/${subreddit}` : null}</h1>
+      <h1 className="subreddit-title">{subreddit !== "" ? `r/ ${subreddit}` : null}</h1>
 
       <div className="main">
 

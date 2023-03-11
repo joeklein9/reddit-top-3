@@ -4,7 +4,7 @@
   flex-direction:column;
   align-items:center;
   border:2px solid black;
-  width:500px;
+  width:525px;
   height:650px;
   font-family: 'Golos Text', sans-serif;
   border-radius:5%;
@@ -60,8 +60,8 @@ margin-right:-25px;
 
 
 .image-container {
-  height: 450px;
-  width:490px;
+  height: 465px;
+  width:515px;
 }
 
 .main {
@@ -138,10 +138,17 @@ margin-right:-25px;
 
 .post-title {
   margin-bottom:35px;
+  
+  
 }
 
 .subreddit-title{
   text-align:center;
   font-family: 'Lobster', cursive;
   font-size:48px;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
 }

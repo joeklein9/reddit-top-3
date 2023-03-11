@@ -20,7 +20,8 @@ export default function Card(props) {
                                 year: 'numeric'
                             })}</h6>
 
-                    <h4 className="post-title"><a href={baseUrl + props.permalink} target="_blank" />{props.title}</h4>
+                    <h4 className="post-title">{props.title}</h4>
+                    
                 </header>
             </div>
 
