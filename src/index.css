@@ -36,7 +36,7 @@ margin-right:-25px;
   display:flex; 
   gap:10%;
   width:500px;
-  margin-top:-10px;
+  margin-top:10px;
   
 }
 
@@ -48,9 +48,18 @@ margin-right:-25px;
 .card-image {
   width: 100%;
   height: 100%;
-  object-fit:cover; 
+  overflow:hidden;
+  object-fit:cover;
+
+ 
+
 }
 
+.image-container {
+  height: 400px;
+  width:515px;
+  margin-top:1px;
+}
 
 .down-arrow  {
 
@@ -62,12 +71,6 @@ margin-right:-25px;
 
   height:20px;
 
-}
-
-
-.image-container {
-  height: 465px;
-  width:515px;
 }
 
 .main {
@@ -142,10 +145,12 @@ margin-right:-25px;
 }
 
 .posted-by{
+  
   margin-bottom:0;
 }
 
 .post-title {
+ 
   margin-bottom:35px;
   
   

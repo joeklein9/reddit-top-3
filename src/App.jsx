@@ -56,10 +56,11 @@ export default function App() {
         preview={post.data.preview}
         permalink={post.data.permalink}
         author={post.data.author}
-        comments={post.data.num_comments}
+        comments={<a href={`https://www.reddit.com${post.data.permalink}comments?sort=top`}target="_blank">{post.data.num_comments} comments</a>}
         selftext={post.data.selftext}
         created={post.data.created}
         key = {post.data.id}
+        
       />
     );
   });

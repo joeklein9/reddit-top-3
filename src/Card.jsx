@@ -34,7 +34,7 @@ export default function Card(props) {
 
             </div>
 
-            <h3 className="comments-container">{props.comments} comments</h3>
+            <h3 className="comments-container">{props.comments}</h3>
         </div>
     )
 }
