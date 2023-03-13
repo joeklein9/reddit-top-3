@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from 'react';
 import Card from "/src/Card";
+import Navbar from "/src/Navbar"
 
 
 export default function App() {
@@ -14,7 +15,7 @@ export default function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    fetch(`https://www.reddit.com/r/${subreddit}/top/.json?t=all&limit=10`)
+    fetch(`https://www.reddit.com/r/${subreddit}/top/.json?t=all&limit=5`)
       .then(res => {
         if (res.status !== 200) {
           console.warn("Warning: Something is wrong with the api.");
@@ -30,7 +31,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    fetch("https://www.reddit.com/r/wallpapers/top/.json?t=all&limit=10").then(
+    fetch("https://www.reddit.com/r/wallpapers/top/.json?t=all&limit=5").then(
       res => {
         if (res.status !== 200) {
           console.warn("Warning: Something is wrong with the api.");
@@ -66,9 +67,10 @@ export default function App() {
 
   return (
     <>
+      <Navbar />
       <form className = "input-form" onSubmit={handleSubmit}>
         <input className ="input-area" type="text" value={subreddit} onChange={handleChange} placeholder="Enter subreddit name, e.g. 'wallpapers'" />
-        <button className = "submit" type="submit">GET TOP 10</button>
+        <button className = "submit" type="submit">GET TOP 5</button>
       </form>
 
       <h1 className="subreddit-title">{subreddit !== "" ? `r/ ${subreddit}` : null}</h1>

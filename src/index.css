@@ -2,6 +2,8 @@
 body {
   overflow-x: hidden;
   background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+  margin:0;
+  padding:0;
 
 }
 
@@ -101,6 +103,7 @@ margin-right:-25px;
   background: rgb(251, 251, 251);
   transition: all 0.1s ease 0s;
   height:36px;
+  margin-top:90px;
   
   
 
@@ -130,7 +133,7 @@ margin-right:-25px;
   transition-property: all;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
   box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
- 
+  margin-top:90px;
   
 }
 
@@ -158,4 +161,28 @@ margin-right:-25px;
 a {
   text-decoration: underline;
   color: inherit;
+}
+
+.navbar-container {
+  font-family: 'Golos Text', sans-serif;
+  display:flex;
+  align-items: center;
+  height:70px;
+  background-image: linear-gradient(to left, #434343 0%, black 100%);
+
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color:white;
+  
+
+}
+
+.navbar-icon {
+  height:50px;
+  width:50px;
+  margin-left:20px;
+  margin-right:20px;
 }
