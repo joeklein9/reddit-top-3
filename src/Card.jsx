@@ -8,9 +8,9 @@ export default function Card(props) {
         <div className="card-container">
             <div className="score-and-header-container">
                 <div className="score-container">
-                    <img className="down-arrow" src="/public/static/img/down-arrow.png" />
+                    <img className="down-arrow" src="/public/static/img/down-arrow-2.svg" />
                     <div className="score">{(props.ups/ 1000).toFixed(0) + "k"}</div>
-                    <img className="up-arrow" src="/public/static/img/up-arrow.png" />
+                    <img className="up-arrow" src="/public/static/img/up-arrow-2.svg" />
                 </div>
                 <header className="header-container">
                     <h6 className="posted-by">Posted by {props.author} on   {new Date(props.created * 1000).toLocaleString('en-US',
@@ -29,7 +29,7 @@ export default function Card(props) {
                 {props.preview ? (
                     <img className="card-image" src={(props.preview.images[0].source.url).replace(/&amp;/g, "&")} />
                 ) : (
-                    <img className="reddit-icon" src="/public/static/img/reddit-icon2.png" />
+                    <img className="reddit-icon" src="/public/static/img/reddit-icon-3.svg" />
                 )}
 
             </div>
