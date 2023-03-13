@@ -168,8 +168,7 @@ a {
   display:flex;
   align-items: center;
   height:70px;
-  background-image: linear-gradient(to left, #434343 0%, black 100%);
-
+  background: black;
   position: fixed;
   width: 100%;
   top: 0;
