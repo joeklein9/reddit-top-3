@@ -68,7 +68,7 @@ export default function App() {
     <>
       <form className = "input-form" onSubmit={handleSubmit}>
         <input className ="input-area" type="text" value={subreddit} onChange={handleChange} placeholder="Enter subreddit name, e.g. 'wallpapers'" />
-        <button className = "submit" type="submit">Submit</button>
+        <button className = "submit" type="submit">GET TOP 10</button>
       </form>
 
       <h1 className="subreddit-title">{subreddit !== "" ? `r/ ${subreddit}` : null}</h1>
