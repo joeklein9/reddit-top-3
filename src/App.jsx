@@ -28,6 +28,7 @@ export default function App() {
           }
         });
       });
+      
   };
 
   useEffect(() => {
@@ -78,7 +79,7 @@ export default function App() {
 
       <div className="main">
 
-
+        
         {postElements}
 
 

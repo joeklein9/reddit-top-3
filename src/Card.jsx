@@ -5,6 +5,7 @@ let baseUrl = 'https://reddit.com'
 
 export default function Card(props) {
     return (
+        
         <div className="card-container">
             <div className="score-and-header-container">
                 <div className="score-container">

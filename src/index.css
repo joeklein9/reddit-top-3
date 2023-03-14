@@ -1,3 +1,9 @@
+@media screen and (max-width: 500px) {
+}
+
+@media screen and (min-width:500px) {
+}
+
 
 body {
   overflow-x: hidden;
@@ -11,13 +17,15 @@ body {
   display:flex;
   flex-direction:column;
   align-items:center;
-  border:2px solid black;
+  border:0.125em solid black;
   font-family: 'Golos Text', sans-serif;
   border-radius:5%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding:10px;
-  margin:25px;
+  padding:0.625em;
+  margin:1.5625em;
   background-color: white;
+ 
+ 
 
 
 }
@@ -28,21 +36,21 @@ display:flex;
 flex-direction:column;
 justify-content: center;
 align-items:center;
-margin-right:-25px;
+margin-right:-1.5625em;
 }
 
 
 .score-and-header-container {
   display:flex; 
   gap:10%;
-  width:500px;
-  margin-top:-10px;
+  width:31.25em;
+  margin-top:-0.625em;
   
 }
 
 .comments-container {
   text-align:center;
-  font-size:18px;
+  font-size:1.125em;
 }
 
 .card-image {
@@ -56,20 +64,20 @@ margin-right:-25px;
 }
 
 .image-container {
-  height: 400px;
-  width:515px;
-  margin-top:1px;
+  height: 25em;
+  width:32em;
+  margin-top:.0625em;
 }
 
 .down-arrow  {
 
-  height:20px;
+  height:1.25em;
 
 }
 
 .up-arrow  {
 
-  height:20px;
+  height:1.25em;
 
 }
 
@@ -81,9 +89,9 @@ margin-right:-25px;
 }
 
 .reddit-icon {
-  height:400px;
-  width:450px;
-  margin-left:20px;
+  height:25em;
+  width:28em;
+  margin-left:1.25em;
 }
 
 .input-form {
@@ -93,49 +101,50 @@ margin-right:-25px;
 .input-area {
   
  
-  width: 500px;
+  width: 30em;
   color: rgb(36, 35, 42);
-  font-size: 16px;
-  line-height: 20px;
-  min-height: 28px;
-  border-radius: 4px;
-  padding: 8px 16px;
-  border: 2px solid transparent;
-  box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+  font-size: 1em;
+  line-height: 1.25em;
+  min-height: 1.75em;
+  border-radius: 0.25em;
+  padding: 0.5em 1em;
+  border: 0.125em solid transparent;
+  box-shadow: rgb(0 0 0 / 12%) 0px 0.625em 0.1875em, rgb(0 0 0 / 24%) 0px .0625em 0.125em;
   background: rgb(251, 251, 251);
   transition: all 0.1s ease 0s;
-  height:36px;
-  margin-top:90px;
+  height:2.5em;
+  margin-top:5.625em;
   
   
 
 }
 
 .input-area:focus{
-  border: 2px solid rgb(124, 138, 255);
+  border: 0.125em solid rgb(124, 138, 255);
 }
 
 .submit {
   
   display: inline-block;
-  margin-left:10px;
+  margin-left:0.625em;
   outline: 0;
   cursor: pointer;
-  border: 2px solid #000;
-  border-radius: 3px;
+  border: 0.125em solid #000;
+  border-radius: 0.1875em;
   color: #fff;
   background: #000;
-  font-size: 20px;
+  font-size: 1.25em;
   font-weight: 600;
-  line-height: 28px;
-  min-height: 20px;
-  padding: 12px 20px;
+  line-height: 1.75em;
+  min-height: 1.25em;
+  padding: 0.5em 1em;
   text-align:center;
   transition-duration: .15s;
   transition-property: all;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
-  box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
-  margin-top:90px;
+  box-shadow: rgb(0 0 0 / 12%) 0px 0.625em 0.1875em, rgb(0 0 0 / 24%) 0px .0625em 0.125em;
+  margin-top:5.625em;
+  
   
 }
 
@@ -151,7 +160,7 @@ margin-right:-25px;
 
 .post-title {
  
-  margin-bottom:35px;
+  margin-bottom:2.1875em;
   
   
 }
@@ -159,7 +168,7 @@ margin-right:-25px;
 .subreddit-title{
   text-align:center;
   font-family: 'Lobster', cursive;
-  font-size:48px;
+  font-size:3em;
 }
 
 a {
@@ -171,21 +180,23 @@ a {
   font-family: 'Golos Text', sans-serif;
   display:flex;
   align-items: center;
-  height:70px;
+  height:4.375em;
   background: black;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 0.3125em 1em;
   color:white;
   
 
 }
 
 .navbar-icon {
-  height:50px;
-  width:50px;
-  margin-left:20px;
-  margin-right:20px;
+  height:3.125em;
+  width:3.125em;
+  margin-left:1.25em;
+  margin-right:1.25em;
 }
+
+
