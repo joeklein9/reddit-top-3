@@ -1,9 +1,20 @@
 import React from "react"
 
-let baseUrl = 'https://reddit.com'
-
-
 export default function Card(props) {
+
+const {index} = props
+
+let medalImage;
+    if (index === 0) {
+        medalImage = "/images/first-place.png";
+    } else if (index === 1) {
+        medalImage = "/images/second-place.png";
+    } else if (index === 2) {
+        medalImage = "/images/third-place.png";
+    }
+
+   
+
     return (
         
         <div className="card-container">
@@ -24,6 +35,10 @@ export default function Card(props) {
                     <h4 className="post-title">{props.title}</h4>
                     
                 </header>
+                
+                <div className = "medal-container">
+                    <img className = "medal" src = {medalImage}/>
+                </div>
             </div>
 
             <div className="image-container">

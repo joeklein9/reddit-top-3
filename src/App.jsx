@@ -15,7 +15,7 @@ export default function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    fetch(`https://www.reddit.com/r/${subreddit}/top/.json?t=all&limit=5`)
+    fetch(`https://www.reddit.com/r/${subreddit}/top/.json?t=all&limit=3`)
       .then(res => {
         if (res.status !== 200) {
           console.warn("Warning: Something is wrong with the api.");
@@ -32,7 +32,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    fetch("https://www.reddit.com/r/wallpapers/top/.json?t=all&limit=5").then(
+    fetch("https://www.reddit.com/r/wallpapers/top/.json?t=all&limit=3").then(
       res => {
         if (res.status !== 200) {
           console.warn("Warning: Something is wrong with the api.");
@@ -48,7 +48,7 @@ export default function App() {
     );
   }, []);
 
-  const postElements = posts.map(post => {
+  const postElements = posts.map((post, index) => {
     return (
       <Card
         ups={post.data.ups}
@@ -61,6 +61,8 @@ export default function App() {
         selftext={post.data.selftext}
         created={post.data.created}
         key = {post.data.id}
+        index = {index}
+        
         
       />
     );
@@ -72,7 +74,7 @@ export default function App() {
       <Navbar />
       <form className = "input-form" onSubmit={handleSubmit}>
         <input className ="input-area" type="text" value={subreddit} onChange={handleChange} placeholder="Enter subreddit name, e.g. 'wallpapers'" />
-        <button className = "submit" type="submit">GET TOP 5</button>
+        <button className = "submit" type="submit">GET TOP 3</button>
       </form>
 
       <h1 className="subreddit-title">{subreddit !== "" ? `r/ ${subreddit}` : null}</h1>

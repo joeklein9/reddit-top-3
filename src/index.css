@@ -24,6 +24,7 @@ body {
   padding:0.625em;
   margin:1.5625em;
   background-color: white;
+  max-width:35em
  
  
 
@@ -42,6 +43,7 @@ margin-right:-1.5625em;
 
 .score-and-header-container {
   display:flex; 
+  justify-content: space-around;
   gap:10%;
   width:31.25em;
   margin-top:-0.625em;
@@ -83,9 +85,10 @@ margin-right:-1.5625em;
 
 .main {
   display:flex;
-  flex-direction:row;
+  flex-direction:column;
   flex-wrap:wrap;
   justify-content: space-around;
+  align-items:center;
 }
 
 .reddit-icon {
@@ -96,6 +99,7 @@ margin-right:-1.5625em;
 
 .input-form {
   text-align: center;
+  padding:1em;
 }
 
 .input-area {
@@ -199,4 +203,11 @@ a {
   margin-right:1.25em;
 }
 
+.medal {
+  height:6em;
+  width:6em;
+}
 
+.medal-container {
+  margin-top:-0.20em
+}
